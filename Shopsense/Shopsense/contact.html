@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClothKart</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+  <section id="header">
+    <a href="#"><img src="img/ClothKartlogo1.png" class="logo" width="70px">ClothKart</a>
+
+    <div class="">
+      <ul id=navbar>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="/showdata">Admin</a></li>
+        <li id="lg-bag"><i class="far fa-shopping-bag"></i></li>
+        <a href="#" id="close"><i class="far fa-times"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </section>
+
+  <section id="page-header" class="about-header">
+    <h2>#let's_talk</h2>
+    <p>LEAVE A MESSAGE, We love to hear from you!</p>
+  </section>
+
+  <section  id="contact-details" class="section-p1">
+    <div class="details">
+      <div class="contact-form">
+  <form action="/contact" method="POST">
+    <span>LEAVE A MESSAGE</span>
+    <h2>We love to hear from you!</h2>
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="normal">Send Message</button>
+  </form>
+<!-- </div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div style="width: 80%; margin: 10px auto;">
+      {% for category, message in messages %}
+        <div style="padding: 10px; border-radius: 6px; margin-bottom: 10px;
+                    {% if category == 'success' %}
+                      background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;
+                    {% elif category == 'error' %}
+                      background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;
+                    {% elif category == 'warning' %}
+                      background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba;
+                    {% else %}
+                      background-color: #cce5ff; color: #004085; border: 1px solid #b8daff;
+                    {% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %} -->
+
+      <span>GET IN TOUCH</span>
+      <h2>Visit one of our agency location or contact us today</h2>
+      <h3>Head Office</h3>
+      <div>
+        <li>
+          <i class="fal fa-map"></i>
+          <p>56 GlassFord Street Glasgow G1 1UL New York</p>
+        </li>
+        <li>
+          <i class="fal fa-envelope"></i>
+          <p>contact@example.com </p>
+        </li>
+        <li>
+          <i class="fal fa-phone-alt"></i>
+          <p>contact@example.com </p>
+        </li>
+        <li>
+          <i class="fal fa-clock"></i>
+          <p>Monday To Saturday : 9:00 am to 21:00 pm </p>
+        </li>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Sign Up For Newsletters</h4>
+    <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+  </div>
+
+  <div class="form">
+    <form action="/subscribe" method="POST">
+      <input type="email" name="email" placeholder="Your email address" required>
+      <button class="normal" type="submit">Sign Up</button>
+    </form>
+    
+  </div>
+</section>
+
+
+  <footer class="section-p1">
+    <div class="col">
+      <img src="img/ClothKartlogo1.png" class="logo" width="70px">
+      <h4>Contact</h4>
+      <p><strong>Address: </strong> 3209 Happy Hollow Road, Street 64, North Carolina</p>
+      <p><strong>Phone: </strong> (022) 12345678 /(+91) 0123456789</p>
+      <p><strong>Hours: </strong> 9:00 - 21:00, Mon - Sat</p>
+      <div class="follow">
+        <h4>Follow Us</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store Or Google Play</p>
+      <div class="row">
+        <img src="img/pay/app.jpg" alt="">
+        <img src="img/pay/play.jpg" alt="">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <img src="img/pay/pay.png" alt="">
+    </div>
+    <div class="copyright">
+      <p>© 2023, Nayan Prajapati - online shopping website</p>
+    </div>
+
+  </footer>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClothKart - Account</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      margin: 50px auto;
+      flex-wrap: wrap;
+      max-width: 900px;
+    }
+    .form-container {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    .form-container h2 {
+      margin-bottom: 15px;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-container button {
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .message {
+      text-align: center;
+      margin-bottom: 10px;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="#"><img src="img/ClothKartlogo1.png" class="logo" width="70px"> ClothKart</a>
+    <ul id="navbar">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a class="active" href="/account">Account</a></li>
+      <li><a href="/showdata">Admin</a></li>
+      <li id="lg-bag"><i class="far fa-shopping-bag"></i></li>
+    </ul>
+  </section>
+
+  <section id="page-header" class="about-header">
+    <h2>#Account & Info</h2>
+    <p>Manage your account and stay secure.</p>
+  </section>
+
+  <div class="container">
+    <!-- Login -->
+    <div class="form-container">
+      <form action="/login" method="POST">
+        <h2>Login</h2>
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Signup -->
+    <div class="form-container">
+      <form action="/register" method="POST">
+        <h2>Sign Up</h2>
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter username" required>
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="section-p1">
+    <div class="copyright">
+      <p>© 2025, ClothKart - Online Shopping Website</p>
+    </div>
+  </footer>
+
+  <!-- Optional Flask Flash Messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div style="text-align:center; margin-top:20px;">
+        {% for category, message in messages %}
+          <p class="message" style="color: {% if category=='error' %}red{% elif category=='success' %}green{% else %}blue{% endif %};">
+            {{ message }}
+          </p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📊 Admin Dashboard - ClothKart</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #e8f1ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-top: 30px;
+        }
+        section {
+            padding: 20px 60px;
+        }
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #e5e5e5;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #1d4ed8;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8faff;
+        }
+        .badge {
+            background: #2563eb;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- 🔹 Navbar (same as your website) -->
+  <section id="header">
+    <a href="/"><img src="img/ClothKartlogo1.png" class="logo" width="70px">ClothKart</a>
+    <div>
+      <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a class="active" href="/showdata">Admin</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <h1>🧾 ClothKart Database Dashboard</h1>
+
+  <section>
+    <div class="table-container">
+        <h2>👤 Users <span class="badge">{{ users|length }}</span></h2>
+        <table>
+            <tr><th>ID</th><th>Username</th><th>Email</th></tr>
+            {% for u in users %}
+            <tr><td>{{ u.id }}</td><td>{{ u.username }}</td><td>{{ u.email }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>🛍️ Products <span class="badge">{{ products|length }}</span></h2>
+        <table>
+            <tr><th>ID</th><th>Name</th><th>Price (₹)</th><th>Description</th></tr>
+            {% for p in products %}
+            <tr><td>{{ p.id }}</td><td>{{ p.name }}</td><td>{{ p.price }}</td><td>{{ p.description }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>🛒 Cart Items <span class="badge">{{ carts|length }}</span></h2>
+        <table>
+            <tr><th>ID</th><th>User ID</th><th>Product</th><th>Price (₹)</th><th>Quantity</th></tr>
+            {% for c in carts %}
+            <tr><td>{{ c.id }}</td><td>{{ c.user_id }}</td><td>{{ c.product_name }}</td><td>{{ c.price }}</td><td>{{ c.quantity }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>📨 Contact Messages <span class="badge">{{ contacts|length }}</span></h2>
+        <table>
+            <tr><th>ID</th><th>Name</th><th>Email</th><th>Subject</th><th>Message</th></tr>
+            {% for msg in contacts %}
+            <tr><td>{{ msg.id }}</td><td>{{ msg.name }}</td><td>{{ msg.email }}</td><td>{{ msg.subject }}</td><td>{{ msg.message }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>📧 Subscribers <span class="badge">{{ subscribers|length }}</span></h2>
+        <table>
+            <tr><th>ID</th><th>Email</th></tr>
+            {% for s in subscribers %}
+            <tr><td>{{ s.id }}</td><td>{{ s.email }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+  </section>
+
+  <footer class="section-p1">
+    <p>© 2025 ClothKart | Admin Panel Interface</p>
+  </footer>
+
+</body>
+</html>
